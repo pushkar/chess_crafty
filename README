@@ -1,0 +1,35 @@
+Modified Crafty Engine
+Version:  23.3
+Documentation: http://www.cis.uab.edu/hyatt/craftydoc.html
+
+Changes:
+Added named pipes to communicate with crafty engine
+Ach-ed it
+
+Compile:
+make linux
+
+Run:
+./crafty
+
+ACH
+------------
+You play the game with crafty, move made with the PGN format.
+Crafty publishes on two ach channels.
+
+Channel 1: Name: crafty, Type: Somatic__Crafty
+string move - char[10], next move in the extended PGN format. (Ex. Pd3d4, Qd1h5...)
+byte boardstate - signed char[64], boardstate in the internal crafty format
+After d4, board state would look like this - 
+   4    2    3    5    6    3    2    4 
+   1    1    1    0    1    1    1    1 
+   0    0    0    0    0    0    0    0 
+   0    0    0    1    0    0    0    0 
+   0    0    0    0    0    0    0    0 
+   0    0    0    0    0    0    0    0 
+  -1   -1   -1   -1   -1   -1   -1   -1 
+  -4   -2   -3   -5   -6   -3   -2   -4 
+
+
+Channel 2: Name: token, Type: Somatic__Token
+vector iattr - int[2], move start location to end location
