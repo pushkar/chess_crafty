@@ -1,0 +1,13 @@
+language: cpp
+compiler:
+  - gcc
+script: make
+branches:
+  only:
+    - master
+notifications:
+  recipients:
+    - pushkarkolhe@gmail.com
+  email:
+    on_success: change
+    on_failure: always
